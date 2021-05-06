@@ -100,7 +100,7 @@
 
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */ 
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-          /* I'm gonna add my code in this region /* 
+          /* I'm gonna add my code in this region I need to create variables for my SECOND CANVAS/* 
           
          
 
@@ -148,6 +148,16 @@
         context.fillText("Original image will go here", 30, 40);
       </script>
 
+       <canvas id="secondCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <script> /* This script initiates the cavas and puts the text on the canvas "secondCanvas" */
+        var canvas = document.getElementById('secondCanvas');
+        var context = canvas.getContext("2d");
+        context2.font = '20pt Calibri';
+        context2.fillStyle = "black";
+        context2.fillText("Blue image will go here", 30, 40);
+      </script>
+     
+     
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
       <p>DIY Diagnostics</p>
