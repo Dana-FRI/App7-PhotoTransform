@@ -42,11 +42,12 @@
  <script>
   var docMod = document.lastModified; // gets last modified date and time of the index.html file
   console.log("This file last modified  " + docMod); // displays last modified date and time in the javascipt browser console 
+  
 
 /* detectVerticalSquash & drawImageIOSFix = are functions that are critical due to a flaw in the iPhone camera software that squishes any photos displayed on an HTML5 canvas element. https://github.com/stomita/ios-imagefile-megapixel
 */
- function detectVerticalSquash(img) {
-  var iw = img.naturalWidth, ih = img.naturalHeight;
+ function detectVerticalSquash(img) { // THIS FUNCTION IS REALLY IMPORTANT because they fix the bugs that appear on IOS images on the canvas
+  var iw = img.naturalWidth, ih = img.naturalHeight; // STARTING FROM HERE UNTIL THE NEXT FUNCTION VARIABLE DON'T TOUCH THE CODE OR THIS COULD cause my code not work!!
   var canvas = document.createElement('canvas');
   canvas.width = 1;
   canvas.height = ih;
@@ -70,8 +71,8 @@
   return (ratio===0)?1:ratio;
  }
 
- function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
-  var vertSquashRatio = detectVerticalSquash(img);
+ function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) { // BUT NOTE - these functions don't affect the images coming from different sources
+  var vertSquashRatio = detectVerticalSquash(img); 
   ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
  }
 
@@ -97,8 +98,11 @@
         
           drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
 
-          /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
+          /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */ 
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+          /* I'm gonna add my code in this region /* 
+          
+         
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
